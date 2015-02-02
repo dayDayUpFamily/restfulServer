@@ -116,24 +116,26 @@ add a apartment
 |floor  | int    | 1-20    |  1  | |
 |brokerFee|	int	|	 0-2000 |	800  || |
 
+**Response**
+Attach Link in HTTP head filed
+```json
+{
+  "link":"/apartments/123",
+  "rel":"self"
+}
+```
+
 
 ```json
 {
-  "status": 200,
-  "data": {
-    "id": 1,
-    "price": 3000,
-    "room": 2,
-    "bath": 3,
-    "floor": 1,
-    "brokerFee": 800
-  }
+  "status": 201,
+  "data": "create success!"
 }
 
 
 {
   "status":404,
-  "data": "Error message"
+  "data": "error message"
 }
 ```
 ### PUT **/apartments/:id**
@@ -155,20 +157,13 @@ update info of a apartment
 ```json
 {
   "status": 200,
-  "data": {
-    "id": 1,
-    "price": 3000,
-    "room": 2,
-    "bath": 3,
-    "floor": 1,
-    "brokerFee": 800
-  }
+  "data":"update success"
 }
 
 
 {
   "status":404,
-  "data": "Error message"
+  "data": "error message"
 }
 ```
 ### Delete **/apartments/:id**

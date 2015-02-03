@@ -86,11 +86,8 @@ Create a new user.
 |name	|required	|JSONObject	| 	|	| 	|
 |name.first	|required	|string	| 	|	|  |
 |name.middle	|optional	|string	| 	| 	|   |
-|
 |name.last	|required	|string	| 	|	|   |
-|
 |gender	|optional	|int	|0/1/2	| 	|Filter users by gender. Value 0 for unspecified; 1 for male; 2 for female.|
-|
 |contact	|required	|JSONObject	|   	| 	| 	|
 |contact.email	|required	|string	| 	| 	|   |
 |contact.phone	|optional	|string	| 	| 	|   |
@@ -216,11 +213,8 @@ Update a user given id.
 |name	|optional	|JSONObject	|	|	|	|
 |name.first	|optional	|string	|	|	|  |
 |name.middle	|optional	|string	|	|	|  |
-|
 |name.last	|optional	|string	|	|	|  |
-|
 |gender	|optional	|int	|0/1/2	|	|Filter users by gender. Value 0 for unspecified; 1 for male; 2 for female.|
-|
 |contact	|optional	|JSONObject	|	|	|	|
 |contact.email	|optional	|string	|	|	|  |
 |contact.phone	|optional	|string	|	|	|  |

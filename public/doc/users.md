@@ -78,6 +78,7 @@ Create a new user.
 
 
 **Request Body**
+
 | Attribute | Validate   | Type   | Value | Default | Note |
 |:---------:|:------:|:--------:|:-----:|:-----:|:-----:|
 |username	|required	|string	| 	|	|Rule to be designed.  |

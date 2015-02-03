@@ -2,7 +2,7 @@ User Wishlist
 -------------
 
 
-### GET **/users/:userId/wishlist/apartments?price=&bathroom=&offset=...**
+### GET **/v1/users/:userId/wishlist/apartments?price=&bathroom=&offset=...**
 
 Display the wishlist of a user. A user can only have one wishlist, which contains apartments.
 
@@ -16,10 +16,10 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
 |   offset    |  int   |       |       1/2/3...       |    1     |        page number      |
 |   limit   |  int   |       |          10          |    10     |           limit      |
 |price| Int |       | 2000-3000|  2000  |   | room price |
-|room| int |         |2-4|  2  | number of rooms|        
-|bathroom| Int | |2-4| 2| number of bathrooms|       
+|room| int |         |2-4|  2  | number of rooms|
+|bathroom| Int | |2-4| 2| number of bathrooms|
 |floor            | int    | required | 1-20    |  1  |
-|propertyType| string	|	| “single”/”condo”/”apartment”	|	|	|	
+|propertyType| string	|	| “single”/”condo”/”apartment”	|	|	|
 |brokerFee|	int	|	| 0-2000|	|
 
 **Cautions**
@@ -40,7 +40,7 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
             "floor": 1,
             "propertyType": 2,
             "brokerFee": 800
-        }, 
+        },
         {
 	        "aptId": 3,
 	        "interestExtent": 1,
@@ -58,7 +58,7 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
             {“ref”:”next”, ”href”:”../apartments?offset=2&limit=2”},
 	        {“ref”:”first”, ”href”:”../apartments?offset=0&limit=2”},
             {“ref”:”last”,”href”:”../apartments?offset=21092&limit=2”}
-	
+
 ]
 }
 
@@ -74,7 +74,7 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
 
 
 
-### GET **/users/:userId/wishlist/apartments/:id**
+### GET **/v1/users/:userId/wishlist/apartments/:id**
 
 Display the details of a record in wishlist.
 
@@ -137,7 +137,7 @@ Display the details of a record in wishlist.
 
 
 
-### PUT  **/users/:userId/wishlist/apartments/:id**
+### PUT  **/v1/users/:userId/wishlist/apartments/:id**
 
 Update a record in the wishlist.
 
@@ -170,7 +170,7 @@ Update a record in the wishlist.
 
 
 
-### POST **/users/:userId/wishlist/apartments**
+### POST **/v1/users/:userId/wishlist/apartments**
 
 add a new record to the wishlist.
 
@@ -204,7 +204,7 @@ add a new record to the wishlist.
 
 
 
-### DELETE **/users/:userId/wishlist/apartments/:id**
+### DELETE **/v1/users/:userId/wishlist/apartments/:id**
 
 Delete a record in the wishlist.
 

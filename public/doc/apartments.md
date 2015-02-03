@@ -9,7 +9,7 @@ json key: camel
 Apartments List
 ---------------
 
-### GET **/apartments?price=&bath=&offset=...**
+### GET **/v1/apartments?price=&bath=&offset=...**
 
 Query and Pagination
 
@@ -70,7 +70,7 @@ or
 Apartment Detail
 ----------------
 
-###GET **/apartments/:id**
+###GET **/v1/apartments/:id**
 
 
 **Request**
@@ -101,7 +101,7 @@ Apartment Detail
 }
 ```
 
-### POST **/apartments**
+### POST **/v1/apartments**
 
 
 add a apartment
@@ -117,14 +117,12 @@ add a apartment
 |brokerFee|	int	|	 0-2000 |	800  || |
 
 **Response**
-Attach Link in HTTP head filed
-```json
-{
-  "link":"/apartments/123",
-  "rel":"self"
-}
-```
 
+****Headers****
+
+  Link: <http:/ap1/v1/apartments/123";"rel":"self"
+
+****Body****
 
 ```json
 {
@@ -138,7 +136,7 @@ Attach Link in HTTP head filed
   "data": "error message"
 }
 ```
-### PUT **/apartments/:id**
+### PUT **/v1/apartments/:id**
 
 update info of a apartment
 
@@ -166,7 +164,7 @@ update info of a apartment
   "data": "error message"
 }
 ```
-### Delete **/apartments/:id**
+### Delete **/v1/apartments/:id**
 delete a apartment
 
 **Request**

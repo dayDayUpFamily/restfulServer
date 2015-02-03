@@ -207,6 +207,7 @@ Update a user given id.
 
 
 **Request Body**
+
 | Attribute | Validate   | Type   | Value | Default | Note |
 |:---------:|:------:|:--------:|:-----:|:-----:|:-----:|
 |password	|optional	|string	|	|	|Rule to be designed.  |

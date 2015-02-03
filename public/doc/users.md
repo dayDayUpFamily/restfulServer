@@ -13,7 +13,6 @@ List all users.
 |:---------:|:------:|:--------:|:-----:|:-----:|:-----:|
 |userId	|optional	|int	|	|	|Same effect as "GET /users/:id".|
 |gender	|optional	|int	|0/1/2	|	|Filter users by gender. Value 0 for unspecified; 1 for male; 2 for female.|
-|
 |asc	|optional	|int	|1/2	|	|List by name  in ascending order. Value 1 by first name; 2 by last name.|
 
 **Sample Request**
@@ -79,19 +78,19 @@ Create a new user.
 **Request Body**
 | Attribute | Validate   | Type   | Value | Default | Note |
 |:---------:|:------:|:--------:|:-----:|:-----:|:-----:|
-|username	|required	|string	|	|	|Rule to be designed.  |
-|password	|required	|string	|	|	|Rule to be designed.  |
-|name	|required	|JSONObject	|	|	|	|
-|name.first	|required	|string	|	|	|  |
-|name.middle	|optional	|string	|	|	|  |
+|username	|required	|string	| 	|	|Rule to be designed.  |
+|password	|required	|string	| 	|	|Rule to be designed.  |
+|name	|required	|JSONObject	| 	|	| 	|
+|name.first	|required	|string	| 	|	|  |
+|name.middle	|optional	|string	| 	| 	|   |
 |
-|name.last	|required	|string	|	|	|  |
+|name.last	|required	|string	| 	|	|   |
 |
-|gender	|optional	|int	|0/1/2	|	|Filter users by gender. Value 0 for unspecified; 1 for male; 2 for female.|
+|gender	|optional	|int	|0/1/2	| 	|Filter users by gender. Value 0 for unspecified; 1 for male; 2 for female.|
 |
-|contact	|required	|JSONObject	|	|	|	|
-|contact.email	|required	|string	|	|	|  |
-|contact.phone	|optional	|string	|	|	|  |
+|contact	|required	|JSONObject	|   	| 	| 	|
+|contact.email	|required	|string	| 	| 	|   |
+|contact.phone	|optional	|string	| 	| 	|   |
 
 **Sample Request**
 
@@ -101,14 +100,15 @@ HTTP Body
 ```json
 {
 	"username": "RahXephone",
-	"password": "dolem"
+	"password": "dolem",
 	"name": {
-		"first": "Olin"
+		"first": "Olin",
 		"last": "Staccato"
 	},
 	"gender": 2,
 	"contactInfo": {
 		"email": "os@gmail.com"
+	}
 }
 ```
 
@@ -229,7 +229,7 @@ PUT /users/9999
 HTTP Body
 ```json
 {
-	"password": "dolemmelod"
+	"password": "dolemmelod",
 	"name": {
 		"last": "Spaghetti"
 	},

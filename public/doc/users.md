@@ -10,7 +10,7 @@ List all users.
 **Request Parameters**
 
 | Parameter | Validate   | Type   | Value | Default | Note |
-|:---------:|:------:|:--------:|:-----:|:-----:|
+|:---------:|:------:|:--------:|:-----:|:-----:|:-----:|
 |userId	|optional	|int	|	|	|Same effect as "GET /users/:id".|
 |gender	|optional	|int	|0/1/2	|	|Filter users by gender. Value 0 for unspecified; 1 for male; 2 for female.|
 |
@@ -78,7 +78,7 @@ Create a new user.
 
 **Request Body**
 | Attribute | Validate   | Type   | Value | Default | Note |
-|:---------:|:------:|:--------:|:-----:|:-----:|
+|:---------:|:------:|:--------:|:-----:|:-----:|:-----:|
 |username	|required	|string	|	|	|Rule to be designed.  |
 |password	|required	|string	|	|	|Rule to be designed.  |
 |name	|required	|JSONObject	|	|	|	|
@@ -161,7 +161,7 @@ Retrieve a user given id.
 **Request Parameters**
 
 | Parameter | Validate   | Type   | Value | Default | Note |
-|:---------:|:------:|:--------:|:-----:|:-----:|
+|:---------:|:------:|:--------:|:-----:|:-----:|:-----:|
 
 **Sample Request**
 
@@ -208,7 +208,7 @@ Update a user given id.
 
 **Request Body**
 | Attribute | Validate   | Type   | Value | Default | Note |
-|:---------:|:------:|:--------:|:-----:|:-----:|
+|:---------:|:------:|:--------:|:-----:|:-----:|:-----:|
 |password	|optional	|string	|	|	|Rule to be designed.  |
 |name	|optional	|JSONObject	|	|	|	|
 |name.first	|optional	|string	|	|	|  |

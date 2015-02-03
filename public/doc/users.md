@@ -11,13 +11,15 @@ List all users.
 
 | Parameter | Validate   | Type   | Value | Default | Note |
 |:---------:|:------:|:--------:|:-----:|:-----:|:-----:|
+|offset	|optional	|int	|1/2/3...	|1	|For pagination. |
+|limit	|optional	|int	| 	|10	|For pagination. |
 |userId	|optional	|int	|	|	|Same effect as "GET /users/:id".|
 |gender	|optional	|int	|0/1/2	|	|Filter users by gender. Value 0 for unspecified; 1 for male; 2 for female.|
 |asc	|optional	|int	|1/2	|	|List by name  in ascending order. Value 1 by first name; 2 by last name.|
 
 **Sample Request**
 
-GET /users?gender=2&asc=1
+GET /users?gender=2&asc=1&offset=3&limit=5
 
 **Sample Success Response**
 

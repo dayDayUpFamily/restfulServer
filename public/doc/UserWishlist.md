@@ -53,7 +53,7 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
             "brokerFee": 600
         },
 ],
-   links:[
+   "links":[
             {"ref":"next", "href":"../apartments?offset=2&limit=2"},
             {"ref":"first", "href":"../apartments?offset=0&limit=2"},
             {"ref":"last","href":"../apartments?offset=21092&limit=2"}
@@ -184,7 +184,7 @@ add a new record to the wishlist.
 ```json
 {
     "status":200,
-    "Location":/users/:userId/wishlist/apartments/3
+    "Location":"/users/:userId/wishlist/apartments/3"
 }
 ```
 **Error Response**

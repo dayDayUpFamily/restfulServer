@@ -19,8 +19,8 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
 |room| int |         |2-4|  2  | number of rooms|
 |bathroom| Int | |2-4| 2| number of bathrooms|
 |floor            | int    | required | 1-20    |  1  |
-|propertyType| string	|	| “single”/”condo”/”apartment”	|	|	|
-|brokerFee|	int	|	| 0-2000|	|
+|propertyType| string   |   | "single"/"condo"/"apartment"  |   |   |
+|brokerFee| int |   | 0-2000|   |
 
 **Cautions**
 
@@ -28,7 +28,7 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
 
 ```json
 {
-   “status”: 204,
+   "status": 204,
     "data":[
         {
             "aptId": 1,
@@ -42,8 +42,8 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
             "brokerFee": 800
         },
         {
-	        "aptId": 3,
-	        "interestExtent": 1,
+            "aptId": 3,
+            "interestExtent": 1,
             "note":"This apt sucks!",
             "price": 2500,
             "room": 2,
@@ -52,12 +52,11 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
             "propertyType": 3,
             "brokerFee": 600
         },
-       ...
 ],
    links:[
-            {“ref”:”next”, ”href”:”../apartments?offset=2&limit=2”},
-	        {“ref”:”first”, ”href”:”../apartments?offset=0&limit=2”},
-            {“ref”:”last”,”href”:”../apartments?offset=21092&limit=2”}
+            {"ref":"next", "href":"../apartments?offset=2&limit=2"},
+            {"ref":"first", "href":"../apartments?offset=0&limit=2"},
+            {"ref":"last","href":"../apartments?offset=21092&limit=2"}
 
 ]
 }
@@ -67,8 +66,8 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
 
 ```json
 {
-    “status”:404,
-    “data”: “Error message”
+    "status":404,
+    "data": "Error message"
 }
 ```
 
@@ -91,7 +90,7 @@ Display the details of a record in wishlist.
 
 ```json
 {
-    “status”: 204,
+    "status": 204,
     "wishlist":{
         "data":{
             "userId": 1,
@@ -105,6 +104,8 @@ Display the details of a record in wishlist.
     "apt":{
         "data":{
             "aptId": 1,
+            "interestExtent":3,
+             "note":"This apt is perfect!",
             "price": 3000,
             "room": 2,
             "bathroom": 3,
@@ -116,22 +117,15 @@ Display the details of a record in wishlist.
             "rel":"wishedApartment",
             "href":"/apartment/1"
         }
-    },
-    {
-        "interestExtent":3,
-    },
-    {
-        "note":"This apt is perfect!"
     }
-    ""
 }
 ```
 **Error Response**
 
 ```json
 {
-    “status”:404,
-    “data”: “Error message”
+    "status":404,
+    "data": "Error message"
 }
 ```
 
@@ -156,15 +150,15 @@ Update a record in the wishlist.
 
 ```json
 {
-    “status”:200
+    "status":200
 }
 ```
 **Error Response**
 
 ```json
 {
-    “status”:404,
-    “data”: “Error message”
+    "status":404,
+    "data": "Error message"
 }
 ```
 
@@ -189,7 +183,7 @@ add a new record to the wishlist.
 
 ```json
 {
-    “status”:200,
+    "status":200,
     "Location":/users/:userId/wishlist/apartments/3
 }
 ```
@@ -197,8 +191,8 @@ add a new record to the wishlist.
 
 ```json
 {
-    “status”:404,
-    “data”: “Error message”
+    "status":404,
+    "data": "Error message"
 }
 ```
 
@@ -221,15 +215,15 @@ Delete a record in the wishlist.
 
 ```json
 {
-    “status”: 204,
-    “data”:”delete success”
+    "status": 204,
+    "data":"delete success"
 }
 ```
 **Error Response**
 
 ```json
 {
-    “status”:404,
-    “data”: “Error message”
+    "status":404,
+    "data": "Error message"
 }
 ```

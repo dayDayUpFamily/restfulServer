@@ -56,7 +56,7 @@ GET {ServerPath}/v1/users?gender=2&asc=1&offset=10&limit=5
 			}
 		},
 		...
-    ]
+    ],
 	"links": [
 		{"ref":"prev","href":"{ServerPath}/v1/users?gender=2&asc=1&offset=5&limit=5"},
 		{"ref":"next","href":"{ServerPath}/v1/users?gender=2&asc=1&offset=15&limit=5"},

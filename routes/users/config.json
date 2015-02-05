@@ -1,0 +1,17 @@
+{
+  "name": "users",
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/users/register",
+      "function": "register"
+    },
+    {
+      "method": "GET",
+      "path": "/users/:id",
+      "function": "getInfo"
+    }
+
+
+  ]
+}

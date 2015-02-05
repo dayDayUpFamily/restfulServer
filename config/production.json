@@ -1,0 +1,15 @@
+
+{
+"mongodb": {
+"host": "localhost",
+"port": 27017,
+"database": "daydayup",
+"user": "",
+"password": "",
+"url": "mongodb://daydayup:123456@ds039421.mongolab.com:39421/daydaytest"
+},
+"redis": {
+"port": 6379,
+"host": "localhost"
+}
+}

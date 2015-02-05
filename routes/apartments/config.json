@@ -1,0 +1,10 @@
+{
+  "name": "apartments",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/apartments/:id",
+      "function": "findById"
+    }
+  ]
+}

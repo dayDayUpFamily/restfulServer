@@ -9,18 +9,18 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
 **Request Parameters**
 
 | Parameter | type   | validate | value | Attribute | Note |
-|:---------:|:------:|:--------:|:-----:|:---------:|
-|   userId   | int  | required |       |  unique   |
-|   interestExtent   | int  |  |       |   |
-|   note   | string  |  |       |    |
+|:---------:|:------:|:--------:|:-----:|:---------:|:---------:|
+|   userId   | int  | required |    1   |  unique   |
+|   interestExtent   | int  |  |    3   |   |
+|   note   | string  |  |  "This apt is great!"   |    |
 |   offset    |  int   |       |       1/2/3...       |         |        page number      |
 |   limit   |  int   |       |          10          |         |           limit      |
-|price| Int |       | 2000-3000|   |   | room price |
+|price| Int |       | 2000-3000|    |   | room price |
 |room| int |         |2-4|    | number of rooms|
 |bathroom| Int | |2-4| | number of bathrooms|
 |floor            | int    | required | 1-20    |    |
-|propertyType| string   |   | "single"/"condo"/"apartment"  |   |   |
-|brokerFee| int |   | 0-2000|   |
+|propertyType| string	|	| "single"/"condo"/"apartment"	|	|	|
+|brokerFee|	int	|	| 0-2000|	|
 
 **Cautions**
 

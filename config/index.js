@@ -11,4 +11,4 @@ app.port = '1123';
 app.host = 'localhost';
 app.maxAge = 3600 * 24 * 7 * 30;
 
-exports = module.exports = _.assign(app, require('./'+ env + '.json'));
+module.exports = _.assign(app, require('./'+ env + '.json'));

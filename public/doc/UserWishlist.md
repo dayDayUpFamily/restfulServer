@@ -8,7 +8,7 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
 
 **Request Parameters**
 
-| Parameter | type   | validate | value | Attribute | Note
+| Parameter | type   | validate | value | Attribute | Note |
 |:---------:|:------:|:--------:|:-----:|:---------:|
 |   userId   | int  | required |       |  unique   |
 |   interestExtent   | int  |  |       |   |

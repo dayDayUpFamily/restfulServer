@@ -181,10 +181,13 @@ add a new record to the wishlist.
 
 **Success Response**
 
+****Headers****
+
+  Location:/users/:userId/wishlist/apartments/3
+
 ```json
 {
-    "status":200,
-    "Location":"/users/:userId/wishlist/apartments/3"
+    "status":200
 }
 ```
 **Error Response**

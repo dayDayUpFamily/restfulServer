@@ -120,7 +120,7 @@ Create new users.
 
 POST {ServerPath}/v1/users
 
-HTTP Body
+*HTTP Body*
 ```json
 [
 	{
@@ -206,7 +206,7 @@ Update user info in batch with complete info.
 
 PUT {ServerPath}/v1/users
 
-HTTP Body
+*HTTP Body*
 ```json
 [
 	{
@@ -290,7 +290,7 @@ Update user info in batch with partial info.
 
 PATCH {ServerPath}/v1/users
 
-HTTP Body
+*HTTP Body*
 ```json
 [
 	{
@@ -479,7 +479,7 @@ Update a user given id with complete info.
 
 PUT {ServerPath}/v1/users/9999
 
-HTTP Body
+*HTTP Body*
 ```json
 {
 	"password": "dolemmelod",
@@ -545,7 +545,7 @@ Update a user given id with partial info.
 
 PATCH {ServerPath}/v1/users/9999
 
-HTTP Body
+*HTTP Body*
 ```json
 {
 	"password": "dolemmelod",

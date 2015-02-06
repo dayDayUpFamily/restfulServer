@@ -153,14 +153,14 @@ HTTP Body
 
 **Sample Success Response**
 
+*HTTP Header*
+```
+Location:{ServerPath}/v1/users/9999, {ServerPath}/v1/users/10000
+```
+*HTTP Body*
 ```json
 {
-	"status": 201,
-    "data":[
-		"{ServerPath}/v1/users/9999",
-		"{ServerPath}/v1/users/10000",
-		...
-	]
+	"status": 201
 }
 ```
 

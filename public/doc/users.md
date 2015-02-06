@@ -58,10 +58,22 @@ GET {ServerPath}/v1/users?gender=2&asc=1&offset=10&limit=5
 		...
     ],
 	"links": [
-		{"ref":"prev","href":"{ServerPath}/v1/users?gender=2&asc=1&offset=5&limit=5"},
-		{"ref":"next","href":"{ServerPath}/v1/users?gender=2&asc=1&offset=15&limit=5"},
-		{"ref":"first","href":"{ServerPath}/v1/users?gender=2&asc=1&offset=0&limit=5"},
-		{"ref":"last","href":"{ServerPath}/v1/users?gender=2&asc=1&offset=995&limit=5"}
+		{
+			"ref":"prev",
+			"href":"{ServerPath}/v1/users?gender=2&asc=1&offset=5&limit=5"
+		},
+		{
+			"ref":"next",
+			"href":"{ServerPath}/v1/users?gender=2&asc=1&offset=15&limit=5"
+		},
+		{
+			"ref":"first",
+			"href":"{ServerPath}/v1/users?gender=2&asc=1&offset=0&limit=5"
+		},
+		{
+			"ref":"last",
+			"href":"{ServerPath}/v1/users?gender=2&asc=1&offset=995&limit=5"
+		}
 	]
 }
 ```
@@ -145,33 +157,8 @@ HTTP Body
 {
 	"status": 201,
     "data":[
-		{
-			"userId": "9999",
-			"username": "RahXephone",
-			"name": {
-				"first": "Olin",
-				"middle": "",
-				"last": "Staccato"
-			},
-			"gender": 2,
-			"contactInfo": {
-				"email": "os@gmail.com",
-				"phone": "",
-			}
-		},
-		{
-			"userId": "10000",
-			"username": "Soukyuu",
-			"password": "Fafner",
-			"name": {
-				"first": "Soushi",
-				"last": "Minashiro"
-			},
-			"gender": 1,
-			"contactInfo": {
-				"email": "sm@gmail.com"
-			}
-		},
+		"{ServerPath}/v1/users/9999",
+		"{ServerPath}/v1/users/10000",
 		...
 	]
 }
@@ -257,38 +244,7 @@ HTTP Body
 
 ```json
 {
-	"status": 201,
-    "data":[
-		{
-			"userId": "9999",
-			"username": "RahXephone",
-			"name": {
-				"first": "Olin",
-				"middle": "",
-				"last": "Staccato"
-			},
-			"gender": 2,
-			"contactInfo": {
-				"email": "os@gmail.com",
-				"phone": "",
-			}
-		},
-		{
-			"userId": "3999",
-			"username": "kmn",
-			"name": {
-				"first": "Aileen",
-				"middle": "",
-				"last": "Zhang"
-			},
-			"gender": 2,
-			"contactInfo": {
-				"email": "az@gmail.com",
-				"phone": "789-012-3456",
-			}
-		},
-		...
-	]
+	"status": 201
 }
 ```
 
@@ -364,38 +320,7 @@ HTTP Body
 
 ```json
 {
-	"status": 201,
-    "data":[
-		{
-			"userId": "9999",
-			"username": "RahXephone",
-			"name": {
-				"first": "Olin",
-				"middle": "",
-				"last": "Staccato"
-			},
-			"gender": 1,
-			"contactInfo": {
-				"email": "os@gmail.com",
-				"phone": "",
-			}
-		},
-		{
-			"userId": "3999",
-			"username": "kmn",
-			"name": {
-				"first": "Aileen",
-				"middle": "",
-				"last": "Zhang"
-			},
-			"gender": 2,
-			"contactInfo": {
-				"email": "az@gmail.com",
-				"phone": "789-012-3456",
-			}
-		},
-		...
-	]
+	"status": 201
 }
 ```
 
@@ -575,21 +500,7 @@ HTTP Body
 
 ```json
 {
-	"status": 201,
-    "data":{
-		"userId": "9999",
-		"username": "RahXephone",
-		"name": {
-			"first": "Olin",
-			"middle": "",
-			"last": "Spaghetti"
-		},
-		"gender": 1,
-		"contactInfo": {
-			"email": "os@gmail.com",
-			"phone": "",
-		}
-	}
+	"status": 201
 }
 ```
 
@@ -648,21 +559,7 @@ HTTP Body
 
 ```json
 {
-	"status": 201,
-    "data":{
-		"userId": "9999",
-		"username": "RahXephone",
-		"name": {
-			"first": "Olin",
-			"middle": "",
-			"last": "Spaghetti"
-		},
-		"gender": 1,
-		"contactInfo": {
-			"email": "os@gmail.com",
-			"phone": "",
-		}
-	}
+	"status": 201
 }
 ```
 

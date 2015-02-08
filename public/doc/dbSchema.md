@@ -33,7 +33,7 @@
 {
   "userId":3999,
   "aptId":1,
-  "interest Extent":2,
+  "interestExtent":2,
   "note":"this apt is full"
 }
 

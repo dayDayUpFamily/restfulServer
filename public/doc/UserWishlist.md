@@ -1,26 +1,26 @@
 User Wishlist
 -------------
 
-
-### GET **/v1/users/:userId/wishlist/apartments?price=&bathroom=&offset=...**
+### GET **.../v1/users/:userId/wishlist/apartments**
+### GET **.../v1/users/:userId/wishlist/apartments?price=&bathroom=&offset=...**
 
 Display the wishlist of a user. A user can only have one wishlist, which contains apartments.
 
 **Request Parameters**
 
-| Parameter | type   | validate | value | Attribute |
-|:---------:|:------:|:--------:|:-----:|:---------:|
-|   userId   | int  | required |       |  unique   |
-|   interestExtent   | int  |  |       |   |
-|   note   | string  |  |       |    |
-|   offset    |  int   |       |       1/2/3...       |    1     |        page number      |
-|   limit   |  int   |       |          10          |    10     |           limit      |
-|price| Int |       | 2000-3000|  2000  |   | room price |
-|room| int |         |2-4|  2  | number of rooms|
-|bathroom| Int | |2-4| 2| number of bathrooms|
-|floor            | int    | required | 1-20    |  1  |
-|propertyType| string   |   | "single"/"condo"/"apartment"  |   |   |
-|brokerFee| int |   | 0-2000|   |
+| Parameter | type   | validate | value | Attribute | Note |
+|:---------:|:------:|:--------:|:-----:|:---------:|:---------:|
+|   userId   | int  | required |    1   |  unique   |
+|   interestExtent   | int  |  |    3   |   |
+|   note   | string  |  |  "This apt is great!"   |    |
+|   offset    |  int   |       |       1/2/3...       |         |        page number      |
+|   limit   |  int   |       |          10          |         |           limit      |
+|price| Int |       | 2000-3000|    |   | room price |
+|room| int |         |2-4|    | number of rooms|
+|bathroom| Int | |2-4| | number of bathrooms|
+|floor            | int    | required | 1-20    |    |
+|propertyType| string	|	| "single"/"condo"/"apartment"	|	|	|
+|brokerFee|	int	|	| 0-2000|	|
 
 **Cautions**
 
@@ -54,9 +54,9 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
         },
 ],
    "links":[
-            {"ref":"next", "href":"../apartments?offset=2&limit=2"},
-            {"ref":"first", "href":"../apartments?offset=0&limit=2"},
-            {"ref":"last","href":"../apartments?offset=21092&limit=2"}
+            {"ref":"next", "href":"../v1/users/:userId/wishlist/apartments?offset=2&limit=2"},
+            {"ref":"first", "href":"../v1/users/:userId/wishlist/apartments?offset=0&limit=2"},
+            {"ref":"last","href":"../v1/users/:userId/wishlist/apartments?offset=21092&limit=2"}
 
 ]
 }
@@ -181,10 +181,13 @@ add a new record to the wishlist.
 
 **Success Response**
 
+****Headers****
+
+  Location:/users/:userId/wishlist/apartments/3
+
 ```json
 {
-    "status":200,
-    "Location":"/users/:userId/wishlist/apartments/3"
+    "status":200
 }
 ```
 **Error Response**

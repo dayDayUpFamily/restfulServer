@@ -3,12 +3,12 @@
   "routes": [
     {
       "method": "POST",
-      "path": "/users/register",
+      "path": "/v1/users/register",
       "function": "register"
     },
     {
       "method": "GET",
-      "path": "/users/:id",
+      "path": "/v1/users/:id",
       "function": "getInfo"
     }
 

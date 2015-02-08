@@ -3,7 +3,7 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/apartments/:id",
+      "path": "/v1/apartments/:id",
       "function": "findById"
     }
   ]

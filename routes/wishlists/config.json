@@ -1,0 +1,23 @@
+{
+  "name": "wishlists",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/v1/users/:userId/wishlist/apartments",
+      "function": "getApartments"
+    },
+    {
+      "method": "GET",
+      "path": "/v1/users/:userId/wishlist/apartments/:id",
+      "function": "getApartment"
+    },
+    {
+      "method": "POST",
+      "path": "/v1/users/:userId/wishlist/apartments/",
+      "function": "addApartment"
+    }
+
+
+
+  ]
+}

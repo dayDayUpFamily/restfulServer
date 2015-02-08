@@ -4,7 +4,7 @@ var _ = require('lodash');
 
 var app = exports;
 
-var env = process.env.NODE_ENV || 'development';
+var env = process.env.NODE_ENV || 'production';
 
 app.env = env;
 app.port = '1123';

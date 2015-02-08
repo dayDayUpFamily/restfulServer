@@ -14,3 +14,10 @@ exports.findById = function ( req, res, next ) {
   })
 }
 
+exports.deleteById = function ( req, res, next ) {
+    var id = req.params.id;
+    Apartments.deleteById(id, function(err, result) {
+            if (err) return next(err);
+        res.status(200).send(result);
+    })
+}

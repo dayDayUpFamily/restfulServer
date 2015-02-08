@@ -20,3 +20,17 @@ exports.findById = function (id, callback) {
   });
 }
 
+exports.deleteById = function (id, callback) {
+    var id = id;
+    Apartments.remove({
+        id: id
+    }, function (err, apartment) {
+        if(err) return callback(err);
+        else if(!apartment) {
+            var error = new Error ('No such apartment,can not delete');
+            error.statusCode = 404;
+            return callback(error, apartment);
+        }
+        return callback(null, apartment);
+    });
+}

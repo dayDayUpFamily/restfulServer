@@ -5,6 +5,11 @@
       "method": "GET",
       "path": "/v1/apartments/:id",
       "function": "findById"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/apartments/:id",
+      "function": "deleteById"
     }
   ]
 }

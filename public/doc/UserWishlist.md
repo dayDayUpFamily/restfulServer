@@ -28,7 +28,7 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
 
 ```json
 {
-   "status": 204,
+   "status": 200,
     "data":[
         {
             "aptId": 1,
@@ -90,7 +90,7 @@ Display the details of a record in wishlist.
 
 ```json
 {
-    "status": 204,
+    "status": 200,
     "wishlist":{
         "data":{
             "userId": 1,

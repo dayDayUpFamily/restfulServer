@@ -21,3 +21,12 @@ exports.deleteById = function ( req, res, next ) {
         res.status(200).send(result);
     })
 }
+
+exports.putById = function ( req, res, next ) {
+    var id = req.params.id;
+    var body = req.body;
+    Apartments.putById(id,body, function(err, result) {
+        if (err) return next(err);
+        res.status(200).send(result);
+    })
+}

@@ -34,3 +34,17 @@ exports.deleteById = function (id, callback) {
         return callback(null, apartment);
     });
 }
+exports.putById = function(id,data,callback){
+    var apartmentId = id;
+    var data = data;
+    console.log(id);
+    Apartments.findOneAndUpdate({id:apartmentId}, data, function (err, apartment) {
+        if(err) return callback(err);
+        else if(!apartment) {
+            var error = new Error ('No such apartment,can not put');
+            error.statusCode = 404;
+            return callback(error, apartment);
+        }
+        return callback(null, apartment);
+    });
+}

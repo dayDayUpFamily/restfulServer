@@ -26,8 +26,8 @@ GET {ServerPath}/v1/users?gender=2&asc=1&offset=10&limit=5
 ```json
 {
 	"status": 200,
-    "data":[
-        {
+	"data":[
+        	{
 			"userId": "3999",
 			"username": "az123",
 			"name": {
@@ -56,7 +56,7 @@ GET {ServerPath}/v1/users?gender=2&asc=1&offset=10&limit=5
 			}
 		},
 		...
-    ],
+	],
 	"links": [
 		{
 			"ref":"prev",
@@ -83,13 +83,13 @@ GET {ServerPath}/v1/users?gender=2&asc=1&offset=10&limit=5
 ```json
 {
 	"status": 404,
-    "data": "Resource not found."
+	"data": "Resource not found."
 }
 ```
 ```json
 {
 	"status": 500,
-    "data": "Internal server error."
+	"data": "Internal server error."
 }
 ```
 
@@ -122,40 +122,25 @@ POST {ServerPath}/v1/users
 
 *HTTP Body*
 ```json
-[
-	{
-		"username": "RahXephone",
-		"password": "dolem",
-		"name": {
-			"first": "Olin",
-			"last": "Staccato"
-		},
-		"gender": 2,
-		"contactInfo": {
-			"email": "os@gmail.com"
-		}
+{
+	"username": "RahXephone",
+	"password": "dolem",
+	"name": {
+		"first": "Olin",
+		"last": "Staccato"
 	},
-	{
-		"username": "Soukyuu",
-		"password": "Fafner",
-		"name": {
-			"first": "Soushi",
-			"last": "Minashiro"
-		},
-		"gender": 1,
-		"contactInfo": {
-			"email": "sm@gmail.com"
-		}
-	},
-	...
-]
+	"gender": 2,
+	"contactInfo": {
+		"email": "os@gmail.com"
+	}
+}
 ```
 
 **Sample Success Response**
 
 *HTTP Header*
 ```
-Location:{ServerPath}/v1/users/9999, {ServerPath}/v1/users/10000
+Location:{ServerPath}/v1/users/9999
 ```
 *HTTP Body*
 ```json
@@ -175,7 +160,7 @@ Location:{ServerPath}/v1/users/9999, {ServerPath}/v1/users/10000
 ```json
 {
 	"status": 500,
-    "data": "Internal server error."
+	"data": "Internal server error."
 }
 ```
 
@@ -208,36 +193,19 @@ PUT {ServerPath}/v1/users
 
 *HTTP Body*
 ```json
-[
-	{
-		"userId": "9999",
-		"password": "dolem",
-		"name": {
-			"first": "Olin",
-			"last": "Staccato"
-		},
-		"gender": 2,
-		"contactInfo": {
-			"email": "os@gmail.com",
-			"phone": "",
-		}
+{
+	"userId": "9999",
+	"password": "dolem",
+	"name": {
+		"first": "Olin",
+		"last": "Staccato"
 	},
-	{
-		"userId": "3999",
-		"password": "kmn",
-		"name": {
-			"first": "Aileen",
-			"middle": "",
-			"last": "Zhang"
-		},
-		"gender": 2,
-		"contactInfo": {
-			"email": "az@gmail.com",
-			"phone": "789-012-3456",
-		}
-	},
-	...
-]
+	"gender": 2,
+	"contactInfo": {
+		"email": "os@gmail.com",
+		"phone": "",
+	}
+}
 ```
 
 **Sample Success Response**
@@ -253,13 +221,13 @@ PUT {ServerPath}/v1/users
 ```json
 {
 	"status": 400,
-    "data": "Invalid request: Bad data."
+	"data": "Invalid request: Bad data."
 }
 ```
 ```json
 {
 	"status": 500,
-    "data": "Internal server error."
+	"data": "Internal server error."
 }
 ```
 
@@ -292,28 +260,14 @@ PATCH {ServerPath}/v1/users
 
 *HTTP Body*
 ```json
-[
-	{
-		"userId": "9999",
-		"name": {
-			"first": "Olin",
-			"last": "Staccato"
-		},
-		"gender": 1,
+{
+	"userId": "9999",
+	"name": {
+		"first": "Olin",
+		"last": "Staccato"
 	},
-	{
-		"userId": "3999",
-		"password": "kmn",
-		"name": {
-			"first": "Aileen",
-		},
-		"contactInfo": {
-			"email": "az@gmail.com",
-			"phone": "789-012-3456",
-		}
-	},
-	...
-]
+	"gender": 1,
+}
 ```
 
 **Sample Success Response**
@@ -329,13 +283,13 @@ PATCH {ServerPath}/v1/users
 ```json
 {
 	"status": 400,
-    "data": "Invalid request: Bad data."
+	"data": "Invalid request: Bad data."
 }
 ```
 ```json
 {
 	"status": 500,
-    "data": "Internal server error."
+	"data": "Internal server error."
 }
 ```
 
@@ -364,13 +318,13 @@ DELETE {ServerPath}/v1/users
 ```json
 {
 	"status": 400,
-    "data": "Invalid request: Bad data."
+	"data": "Invalid request: Bad data."
 }
 ```
 ```json
 {
 	"status": 500,
-    "data": "Internal server error."
+	"data": "Internal server error."
 }
 ```
 
@@ -397,7 +351,7 @@ GET {ServerPath}/v1/users/3999
 ```json
 {
 	"status": 200,
-    "data":{
+	"data":{
 		"userId": "3999",
 		"username": "az123",
 		"name": {
@@ -419,13 +373,13 @@ GET {ServerPath}/v1/users/3999
 ```json
 {
 	"status": 404,
-    "data": "Resource not found."
+	"data": "Resource not found."
 }
 ```
 ```json
 {
 	"status": 500,
-    "data": "Internal server error."
+	"data": "Internal server error."
 }
 ```
 
@@ -443,13 +397,13 @@ Invalid request. <br>
 ```json
 {
 	"status": 400,
-    "data": "Invalid request: Method not allowed."
+	"data": "Invalid request: Method not allowed."
 }
 ```
 ```json
 {
 	"status": 500,
-    "data": "Internal server error."
+	"data": "Internal server error."
 }
 ```
 
@@ -458,7 +412,7 @@ Invalid request. <br>
 ---
 ### PUT **/v1/users/:id**
 
-Update a user given id with complete info.
+Update a user given id with complete info. Same effect as PUT /v1/users with id in request body.
 
 
 **Request Body**
@@ -509,13 +463,13 @@ PUT {ServerPath}/v1/users/9999
 ```json
 {
 	"status": 400,
-    "data": "Error Message"
+	"data": "Error Message"
 }
 ```
 ```json
 {
 	"status": 500,
-    "data": "Error Message"
+	"data": "Error Message"
 }
 ```
 
@@ -524,7 +478,7 @@ PUT {ServerPath}/v1/users/9999
 ---
 ### PATCH **/v1/users/:id**
 
-Update a user given id with partial info.
+Update a user given id with partial info. Same effect as PATCH /v1/users with id in request body.
 
 
 **Request Body**
@@ -568,13 +522,13 @@ PATCH {ServerPath}/v1/users/9999
 ```json
 {
 	"status": 400,
-    "data": "Error Message"
+	"data": "Error Message"
 }
 ```
 ```json
 {
 	"status": 500,
-    "data": "Error Message"
+	"data": "Error Message"
 }
 ```
 
@@ -603,13 +557,13 @@ DELETE {ServerPath}/v1/users/3999
 ```json
 {
 	"status": 400,
-    "data": "Invalid request: Bad data."
+	"data": "Invalid request: Bad data."
 }
 ```
 ```json
 {
 	"status": 500,
-    "data": "Internal server error."
+	"data": "Internal server error."
 }
 ```
 

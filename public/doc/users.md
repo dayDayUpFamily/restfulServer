@@ -111,7 +111,7 @@ Create new users.
 |name.first	|required	|string	| 	|	|  |
 |name.middle	|optional	|string	| 	| 	|   |
 |name.last	|required	|string	| 	|	|   |
-|gender	|optional	|int	|0/1/2	| 	|Filter users by gender. Value 0 for unspecified; 1 for male; 2 for female.|
+|gender	|optional	|int	|0/1/2	| 	| |
 |contact	|required	|JSONObject	|   	| 	| 	|
 |contact.email	|required	|string	| 	| 	|   |
 |contact.phone	|optional	|string	| 	| 	|   |

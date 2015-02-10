@@ -8,8 +8,6 @@ var construct=require('./link').construct;
 var BSON = mongo.BSONPure;
 
 exports.findById= function (id, query, callback) {
-    console.log("------enter models apartments: findById");
-    console.log("------try to find apartment " + id);
     var apartmentId = id;
     var query = query;
     var offset = 0;
@@ -38,10 +36,12 @@ exports.findById= function (id, query, callback) {
         var collectionSize=collections.two;
         subCollection.forEach(function(item,index){
             data[index]=item;
-            /*            data[index].link={
+            data[index].link={
              rel:"self",
-             href:"/v1/users/"+item.userId+'wishlist/apartments'
-             };*/
+             href:"/v1/apartments/"+item.id
+             };
+            //console.log("************" + data[index].link);
+
         })
 
         var res={};
@@ -74,7 +74,6 @@ exports.getApartments = function (query, callback) {
     var queryObject = {};
     var project={};
     for (var param in query){
-        console.log("----" + param + ": " + query[param] + "-----");
         if(param==='offset')
             offset = parseInt(query[param]);
         else if (param ==='limit')
@@ -93,11 +92,13 @@ exports.getApartments = function (query, callback) {
         var subCollection=collections.one;
         var collectionSize=collections.two;
         subCollection.forEach(function(item,index){
+            console.log(index);
             data[index]=item;
-            /*            data[index].link={
-             rel:"self",
-             href:"/v1/users/"+item.userId+'wishlist/apartments'
-             };*/
+            data[index].link={
+                rel:"self",
+                href:"/v1/apartments/"+item.id
+            };
+             console.log(data[0]);
         })
 
         var res={};
@@ -108,7 +109,7 @@ exports.getApartments = function (query, callback) {
             queryObject,
             query.field,
             collectionSize);
-        console.log(res);
+       // console.log(res);
         return callback(null,res);
     })
     function subcollection(callback){

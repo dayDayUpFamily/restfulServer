@@ -317,12 +317,6 @@ DELETE {ServerPath}/v1/users
 
 ```json
 {
-	"status": 400,
-	"data": "Invalid request: Bad data."
-}
-```
-```json
-{
 	"status": 500,
 	"data": "Internal server error."
 }
@@ -554,12 +548,6 @@ DELETE {ServerPath}/v1/users/3999
 
 **Possible Error Response**
 
-```json
-{
-	"status": 400,
-	"data": "Invalid request: Bad data."
-}
-```
 ```json
 {
 	"status": 500,

@@ -313,7 +313,7 @@ DELETE {ServerPath}/v1/users
 }
 ```
 
-**Possible Error Response**
+**Error Response**
 
 ```json
 {
@@ -387,17 +387,10 @@ Invalid request. <br>
 
 
 **Error Response**
-
 ```json
 {
-	"status": 400,
+	"status": 404,
 	"data": "Invalid request: Method not allowed."
-}
-```
-```json
-{
-	"status": 500,
-	"data": "Internal server error."
 }
 ```
 
@@ -546,7 +539,7 @@ DELETE {ServerPath}/v1/users/3999
 }
 ```
 
-**Possible Error Response**
+**Error Response**
 
 ```json
 {

@@ -1,8 +1,7 @@
 User Wishlist
 -------------
 
-### GET **.../v1/users/:userId/wishlist/apartments**
-### GET **.../v1/users/:userId/wishlist/apartments?price=&bathroom=&offset=...**
+### GET **.../v1/users/:userId/wishlist/apartments?interestExtent=&&offset=&limit=&field=...**
 
 Display the wishlist of a user. A user can only have one wishlist, which contains apartments.
 
@@ -15,14 +14,10 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
 |   note   | string  |  |  "This apt is great!"   |    |
 |   offset    |  int   |       |       1/2/3...       |         |        page number      |
 |   limit   |  int   |       |          10          |         |           limit      |
-|price| Int |       | 2000-3000|    |   | room price |
-|room| int |         |2-4|    | number of rooms|
-|bathroom| Int | |2-4| | number of bathrooms|
-|floor            | int    | required | 1-20    |    |
-|propertyType| string	|	| "single"/"condo"/"apartment"	|	|	|
-|brokerFee|	int	|	| 0-2000|	|
+|field| String |       | |    |   | projection field |
+**Sample Request**
 
-**Cautions**
+GET {ServerPath}/v1/users/:userId/wishlist/apatments?interestExtent=1&offset=10&limit=5&filed=note,aptId
 
 **Success Response**
 
@@ -34,23 +29,13 @@ Display the wishlist of a user. A user can only have one wishlist, which contain
             "aptId": 1,
             "interestExtent": 3,
             "note":"This apt is perfect!",
-            "price": 3000,
-            "room": 2,
-            "bathroom": 3,
-            "floor": 1,
-            "propertyType": 2,
-            "brokerFee": 800
+            "link":{"ref":"selfApt", "href":"../v1/apartment/:aptId"},
         },
         {
             "aptId": 3,
             "interestExtent": 1,
             "note":"This apt sucks!",
-            "price": 2500,
-            "room": 2,
-            "bathroom": 2,
-            "floor": 4,
-            "propertyType": 3,
-            "brokerFee": 600
+            "link":{"ref":"selfApt", "href":"../v1/apartment/:aptId"},
         },
 ],
    "links":[

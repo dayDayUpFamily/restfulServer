@@ -17,7 +17,8 @@ var ApartmentSchema = new Schema({
     room:Number,
     bath:Number,
     floor:Number,
-    brokeFee:Number
+    brokeFee:Number,
+    link:{rel:String,href:String}
 
 });
 

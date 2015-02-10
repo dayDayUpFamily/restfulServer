@@ -3,15 +3,23 @@
   "routes": [
     {
       "method": "POST",
-      "path": "/v1/users/register",
-      "function": "register"
+      "path": "/v1/users",
+      "function": "postUsers"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/users",
+      "function": "deleteUsers"
     },
     {
       "method": "GET",
       "path": "/v1/users/:id",
       "function": "getInfo"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/users/:id",
+      "function": "deleteUsers"
     }
-
-
   ]
 }

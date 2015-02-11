@@ -20,7 +20,6 @@ exports.createUser = function (userData, routerCallback) {
     });
 }
 
-// For some reason update not working?
 exports.updateUser = function (userId, userData, routerCallback) {
     console.log("#########MODELS#########");///
     var id;
@@ -158,8 +157,10 @@ exports.getUsers = function (query, callback){
 exports.updateById = function(id,data,callback){
     var userId = id;
     var newData = data;
-    //console.log(id);
-    Users.findOneAndUpdate({id:userId}, newData, function (err, user) {
+    var fields = ['username', 'password', 'name', 'gender', 'contactInfo'];
+    var userDataProjected = _.pick(newData, fields);
+    console.log("asf"+ userDataProjected);///
+    Users.findOneAndUpdate(userId, userDataProjected, function (err, user) {
         if(err) return callback(err);
         else if(!user) {
             var error = new Error ('No such user,can not put');

@@ -68,3 +68,18 @@ exports.addWishApt=function(data,callback){
         return callback(null,result);
     })
 }
+
+exports.changeApartment = function(id,data,callback){
+    var apartmentId = id;
+    var data = data;
+    console.log(id);
+    Wishlists.findOneAndUpdate({aptId:apartmentId}, data, function (err, apartment) {
+        if(err) return callback(err);
+        else if(!apartment) {
+            var error = new Error ('No such apartment in this wishlist, can not put');
+            error.statusCode = 404;
+            return callback(error, apartment);
+        }
+        return callback(null, apartment);
+    });
+}

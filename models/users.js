@@ -20,15 +20,36 @@ exports.createUser = function (userData, routerCallback) {
     });
 }
 
+// For some reason update not working?
+exports.updateUser = function (userId, userData, routerCallback) {
+    console.log("#########MODELS#########");///
+    var id;
+    if (userId) id = userId;
+    else id = userData.userId;
+
+    var fields = ['password', 'name', 'gender', 'contactInfo'];
+    var userDataProjected = _.pick(userData, fields);
+
+    console.log("id = " + id);///
+    console.log(userData);///
+    console.log(userDataProjected);///
+
+    Users.findOneAndUpdate({_id: id}, userDataProjected, function(dbErr,dbResult){
+        if(dbErr) return routerCallback(dbErr);
+        return routerCallback(dbErr,dbResult);
+    });
+}
+
 exports.deleteUsers = function (id, routerCallback) {
     console.log("#########MODELS#########");///
+    console.log("id = " + id);///
     if(id){
-        Users.remove({id: id}, function (dbErr, dbResult) {
+        console.log("id NOT undefined");
+        Users.remove({_id: id}, function (dbErr, dbResult) {
             if (dbErr) return routerCallback(dbErr);
             return routerCallback(null, dbResult);
         });
-    }
-    else {
+    } else {
         Users.remove({}, function (dbErr, dbResult) {
             if (dbErr) return routerCallback(dbErr);
             return routerCallback(null, dbResult);

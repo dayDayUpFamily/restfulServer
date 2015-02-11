@@ -20,6 +20,11 @@
       "method": "PUT",
       "path": "/v1/users/:userId/wishlist/apartments/:id",
       "function": "changeApartment"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/users/:userId/wishlist/apartments/:id",
+      "function": "deleteApartment"
     }
   ]
 }

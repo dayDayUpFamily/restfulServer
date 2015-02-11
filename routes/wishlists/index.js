@@ -38,6 +38,13 @@ exports.changeApartment = function ( req, res, next ) {
     })
 }
 
-
+exports.deleteApartment = function ( req, res, next ) {
+    var aptId = req.params.id;
+    var userId = req.params.userId;
+    Wishlists.deleteApartment(aptId, userId, function(err, result) {
+        if (err) return next(err);
+        res.status(200).send(result);
+    })
+}
 
 

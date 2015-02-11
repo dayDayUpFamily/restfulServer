@@ -83,3 +83,21 @@ exports.changeApartment = function(id,data,callback){
         return callback(null, apartment);
     });
 }
+
+// test case: 
+// DELETE localhost:1123/v1/users/nBz7O1JKA/wishlist/apartments/1
+exports.deleteApartment = function (aptId, userId, callback) {
+    var aptId = aptId;
+    var userId = userId;
+    Wishlists.remove({
+        aptId:aptId, userId:userId
+    }, function (err, apartment) {
+        if(err) return callback(err);
+        else if(!apartment) {
+            var error = new Error ('No such apartment in the wishlist, can not delete');
+            error.statusCode = 404;
+            return callback(error, apartment);
+        }
+        return callback(null, apartment);
+    });
+}

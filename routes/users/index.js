@@ -56,7 +56,7 @@ exports.deleteUsers = function(req, res, next) {
     });
 }
 
-exports.getInfo=function(req,res,next){
+exports.getCertainUser=function(req,res,next){
     var id = req.params.id;
     console.log(id);
     Users.findById(id, function(err, result) {
@@ -65,7 +65,21 @@ exports.getInfo=function(req,res,next){
     })
 }
 
+exports.getAllUsers=function(req,res,next){
+    Users.getUsers(req.query, function(err, result) {
+        if (err) return next(err);
+        res.status(200).send(result);
+    })
+}
 
+exports.putCertainUsers=function(req,res,next){
+    var id = req.params.id;
+    var data = req.body;
+    Users.updateById( id, data, function(err, result) {
+        if (err) return next(err);
+        res.status(200).send(result);
+    })
+}
 exports.search = function ( req, res, next ) {
     var email = req.body.email;
     //console.log(req.body.email);

@@ -389,7 +389,7 @@ Invalid request. <br>
 **Error Response**
 ```json
 {
-	"status": 404,
+	"status": 400,
 	"data": "Invalid request: Method not allowed."
 }
 ```

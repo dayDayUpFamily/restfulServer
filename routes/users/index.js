@@ -17,7 +17,7 @@ exports.postUsers = function ( req, res, next ) {
         err.message = "Invalid Request: Gender can only have values 0/1/2."
         return  next(err);
     }
-
+    console.log(req.body);
     Users.createUser(req.body, function (err, result) {
         if (err) {
             //console.log("message = " + err.message);///

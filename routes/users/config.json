@@ -19,7 +19,7 @@
     {
       "method": "GET",
       "path": "/v1/users/:id",
-      "function": "getInfo"
+      "function": "getCertainUser"
     },
     {
       "method": "POST",

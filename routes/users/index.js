@@ -11,6 +11,13 @@ exports.postUsers = function ( req, res, next ) {
         return  next(err);
     }
 
+    if (req.body.gender != 0 && req.body.gender != 1 && req.body.gender != 2 ) {
+        var err = new Error();
+        err.statusCode = 400;
+        err.message = "Invalid Request: Gender can only have values 0/1/2."
+        return  next(err);
+    }
+
     Users.createUser(req.body, function (err, result) {
         if (err) {
             //console.log("message = " + err.message);///
@@ -18,6 +25,7 @@ exports.postUsers = function ( req, res, next ) {
                 err.statusCode = 400;
                 err.message = "Invalid request: Username already exists."
             }
+
             return next(err);
         }
 
@@ -28,6 +36,13 @@ exports.postUsers = function ( req, res, next ) {
 }
 
 exports.patchUsers = function ( req, res, next ) {
+    if (req.body.gender != 0 && req.body.gender != 1 && req.body.gender != 2 ) {
+        var err = new Error();
+        err.statusCode = 400;
+        err.message = "Invalid Request: Gender can only have values 0/1/2."
+        return  next(err);
+    }
+
     Users.updateUser(req.params.id, req.body, function (err, result) {
         if (err) {
             console.log("message = " + err.message);///

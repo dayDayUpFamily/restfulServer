@@ -31,7 +31,7 @@ var UserSchema = new Schema({
         }
     },
     gender: {
-        type: String,
+        type: Number,
         required: true
     },
     contactInfo: {

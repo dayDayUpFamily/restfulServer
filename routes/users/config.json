@@ -17,11 +17,6 @@
       "function": "deleteUsers"
     },
     {
-      "method": "GET",
-      "path": "/v1/users/:id",
-      "function": "getInfo"
-    },
-    {
       "method": "POST",
       "path": "/v1/users/:id",
       "function": "postUsers"

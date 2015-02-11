@@ -2,9 +2,20 @@
   "name": "users",
   "routes": [
     {
+      "method": "GET",
+      "path": "/v1/users",
+      "function": "getAllUsers"
+    },
+
+    {
       "method": "POST",
       "path": "/v1/users",
       "function": "postUsers"
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/users/:id",
+      "function": "putCertainUsers"
     },
     {
       "method": "PATCH",
@@ -35,16 +46,6 @@
       "method": "DELETE",
       "path": "/v1/users/:id",
       "function": "deleteUsers"
-    },
-    {
-      "method": "GET",
-      "path": "/v1/users",
-      "function": "getAllUsers"
-    },
-    {
-      "method": "PUT",
-      "path": "/v1/users/:id",
-      "function": "putCertainUsers"
     }
   ]
 }

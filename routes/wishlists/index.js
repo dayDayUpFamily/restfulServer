@@ -29,6 +29,14 @@ exports.addApartment=function(req,res,next){
     });
 }
 
+exports.changeApartment = function ( req, res, next ) {
+    var id = req.params.id;
+    var body = req.body;
+    Wishlists.changeApartment(id,body, function(err, result) {
+        if (err) return next(err);
+        res.status(200).send(result);
+    })
+}
 
 
 

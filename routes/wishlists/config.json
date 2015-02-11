@@ -15,9 +15,11 @@
       "method": "POST",
       "path": "/v1/users/:userId/wishlist/apartments/",
       "function": "addApartment"
+    },
+    {
+      "method": "PUT",
+      "path": "/v1/users/:userId/wishlist/apartments/:id",
+      "function": "changeApartment"
     }
-
-
-
   ]
 }

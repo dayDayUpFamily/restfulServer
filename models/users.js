@@ -81,9 +81,14 @@ exports.findById= function (id, callback) {
             error.statusCode = 404;
             return callback(error, user);
         }
-
+        var res={};
+        user.link={
+            rel:"self",
+            href:"/v1/users/"+user._id
+        };
+        res.data=user;
         console.log(user);
-        return callback(null, user);
+        return callback(null, res);
     });
 }
 exports.getUsers = function (query, callback){

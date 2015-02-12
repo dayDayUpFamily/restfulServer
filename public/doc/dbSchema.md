@@ -7,7 +7,8 @@
   "room": 2,
   "bath": 3,
   "floor": 1,
-  "brokerFee": 800
+  "brokerFee": 800,
+  "location":"136w,109st 4e"        unique
 }
 ```
 
@@ -15,7 +16,7 @@
 ```json
 {
   "id": 3999,
-  "username": "az123",
+  "username": "az123",        unique
   "name": {
     "first": "Aleen",
     "middle": "",

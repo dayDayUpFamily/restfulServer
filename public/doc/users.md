@@ -212,7 +212,7 @@ PUT {ServerPath}/v1/users
 
 ```json
 {
-	"status": 201
+	"status": 200
 }
 ```
 
@@ -309,7 +309,7 @@ DELETE {ServerPath}/v1/users
 
 ```json
 {
-	"status": 204
+	"status": 200
 }
 ```
 
@@ -441,7 +441,7 @@ PUT {ServerPath}/v1/users/9999
 
 ```json
 {
-	"status": 201
+	"status": 200
 }
 ```
 
@@ -535,7 +535,7 @@ DELETE {ServerPath}/v1/users/3999
 
 ```json
 {
-	"status": 204
+	"status": 200
 }
 ```
 

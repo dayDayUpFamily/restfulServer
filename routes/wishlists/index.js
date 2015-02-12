@@ -16,6 +16,7 @@ exports.getWishlists=function(req,res,next){
      })
 }
 
+
 exports.getWishlistApt=function(req,res,next){
     var userId=req.params.userId;
     var aptId=req.params.id;

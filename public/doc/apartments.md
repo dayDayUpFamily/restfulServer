@@ -24,7 +24,7 @@ Query and Pagination
 |bath      |  int    |2-4       | 2      | number of bathrooms|
 |floor     |  int    | required | 1-20   |  1  |
 |brokerFee |	int	   |	 0-2000	| 0|||
-
+|location     |  string    | unique |    |    |
 **Cautions**
 
 **Response**
@@ -39,7 +39,8 @@ Query and Pagination
               "room": 2,
               "bath": 3,
               "floor": 1,
-              "brokerFee": 800
+              "brokerFee": 800,
+              "location":"136w,109st,5e apt"
             },
             {
               "id": 3,
@@ -47,7 +48,8 @@ Query and Pagination
               "room": 2,
               "bath": 2,
               "floor": 4,
-              "brokerFee": 600
+              "brokerFee": 600,
+              "location":"136w,109st,5e apt"
             }
 
           ],
@@ -90,7 +92,8 @@ Apartment Detail
     "room": 2,
     "bath": 3,
     "floor": 1,
-    "brokerFee": 800
+    "brokerFee": 800,
+    "location":"136w,109st,5e apt"
   }
 }
 
@@ -115,6 +118,7 @@ add a apartment
 |bath| Int  |2-4| 2| number of bathrooms|
 |floor  | int    | 1-20    |  1  | |
 |brokerFee|	int	|	 0-2000 |	800  || |
+|location     |  string    | unique |    |    |
 
 **Response**
 
@@ -150,6 +154,7 @@ update info of a apartment
 |bath| int  |2-4| 2| number of bathrooms|
 |floor  | int    | 1-20    |  1  | |
 |brokerFee|	int	|	 0-2000 |	800  || |
+|location     |  string    | unique |    |    |
 
 
 ```json

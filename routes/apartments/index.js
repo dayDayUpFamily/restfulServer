@@ -6,17 +6,20 @@ var Apartments = require('../../models/apartments');
 
 
 
-exports.findById = function ( req, res, next ) {
+exports.getApartment = function ( req, res, next ) {
   var id = req.params.id;
+    console.log(id);
   Apartments.findById(id, req.query, function(err, result) {
     if (err) return next(err);
-    res.status(200).send(result);
+      result.status=200;
+      res.status(200).send(result);
   })
 }
 
 exports.getApartments = function ( req, res, next ) {
     Apartments.getApartments(req.query, function(err, result) {
         if (err) return next(err);
+        result.status=200;
         res.status(200).send(result);
     })
 }
@@ -24,23 +27,27 @@ exports.getApartments = function ( req, res, next ) {
 exports.addApartment = function ( req, res, next ) {
     Apartments.addApartment(req.body, function(err, result) {
         if (err) return next(err);
-        res.status(200).send(result);
+        res.location(req.headers.host + "/v1/apartments/" + result._id);
+        res.status(201);
+        return res.json({status: 201});
     })
 }
 
-exports.deleteById = function ( req, res, next ) {
+exports.deleteApartment = function ( req, res, next ) {
     var id = req.params.id;
     Apartments.deleteById(id, function(err, result) {
             if (err) return next(err);
+        result.status=200;
         res.status(200).send(result);
     })
 }
 
-exports.putById = function ( req, res, next ) {
+exports.updateApartment = function ( req, res, next ) {
     var id = req.params.id;
     var body = req.body;
     Apartments.putById(id,body, function(err, result) {
         if (err) return next(err);
+        result.status=200;
         res.status(200).send(result);
     })
 }

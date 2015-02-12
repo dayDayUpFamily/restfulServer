@@ -4,48 +4,48 @@
     {
       "method": "GET",
       "path": "/v1/users",
-      "function": "getAllUsers"
+      "function": "getUsers"
     },
 
     {
       "method": "POST",
       "path": "/v1/users",
-      "function": "postUsers"
+      "function": "addUser"
     },
     {
       "method": "PUT",
       "path": "/v1/users/:id",
-      "function": "putCertainUsers"
+      "function": "updateUser"
     },
     {
       "method": "PATCH",
       "path": "/v1/users",
-      "function": "patchUsers"
+      "function": "patchUser"
     },
     {
       "method": "DELETE",
       "path": "/v1/users",
-      "function": "deleteUsers"
+      "function": "deleteUser"
     },
     {
       "method": "GET",
       "path": "/v1/users/:id",
-      "function": "getCertainUser"
+      "function": "getUser"
     },
     {
       "method": "POST",
       "path": "/v1/users/:id",
-      "function": "postUsers"
+      "function": "addUser"
     },
     {
       "method": "PATCH",
       "path": "/v1/users/:id",
-      "function": "patchUsers"
+      "function": "patchUser"
     },
     {
       "method": "DELETE",
       "path": "/v1/users/:id",
-      "function": "deleteUsers"
+      "function": "deleteUser"
     }
   ]
 }

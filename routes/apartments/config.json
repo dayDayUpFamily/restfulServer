@@ -3,23 +3,24 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/v1/apartments/:id",
-      "function": "findById"
-    },
-    {
-      "method": "GET",
       "path": "/v1/apartments",
       "function": "getApartments"
     },
     {
+      "method": "GET",
+      "path": "/v1/apartments/:id",
+      "function": "getApartment"
+    },
+
+    {
       "method": "DELETE",
       "path": "/v1/apartments/:id",
-      "function": "deleteById"
+      "function": "deleteApartment"
     },
     {
       "method": "PUT",
       "path": "/v1/apartments/:id",
-      "function": "putById"
+      "function": "updateApartment"
     },
     {
       "method": "POST",

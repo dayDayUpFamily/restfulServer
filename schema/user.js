@@ -40,8 +40,10 @@ var UserSchema = new Schema({
             type: String,
             required: true
         }
-    }
+    },
+    link:{rel:String,href:String}
 
-});
+
+},{ versionKey: false });
 
 module.exports=mongoose.model('Users',UserSchema);;

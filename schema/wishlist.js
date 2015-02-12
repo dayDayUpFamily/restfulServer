@@ -12,6 +12,6 @@ var UserWishListSchema = new Schema({
     interestExtent:Number,
     note:String
 
-});
+},{ versionKey: false });
 
 module.exports=mongoose.model('wishlist',UserWishListSchema);;

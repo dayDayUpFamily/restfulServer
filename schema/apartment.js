@@ -13,14 +13,18 @@ var bcrypt = require('bcrypt');
 
 // Define user schema
 var ApartmentSchema = new Schema({
-   price:Number,
-    id:Number,
+    location: {
+     type: String,
+     required: true,
+     unique: true
+    },
+    price:Number,
     room:Number,
     bath:Number,
     floor:Number,
     brokerFee:Number,
     link:{rel:String,href:String}
 
-});
+},{ versionKey: false });
 
 module.exports = mongoose.model('Apartments', ApartmentSchema);

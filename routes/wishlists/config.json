@@ -4,27 +4,27 @@
     {
       "method": "GET",
       "path": "/v1/users/:userId/wishlist/apartments",
-      "function": "getApartments"
+      "function": "getWishlists"
     },
     {
       "method": "GET",
       "path": "/v1/users/:userId/wishlist/apartments/:id",
-      "function": "getApartment"
+      "function": "getWishlistApt"
     },
     {
       "method": "POST",
       "path": "/v1/users/:userId/wishlist/apartments/",
-      "function": "addApartment"
+      "function": "addWishlist"
     },
     {
       "method": "PUT",
       "path": "/v1/users/:userId/wishlist/apartments/:id",
-      "function": "changeApartment"
+      "function": "updateWishlist"
     },
     {
       "method": "DELETE",
       "path": "/v1/users/:userId/wishlist/apartments/:id",
-      "function": "deleteApartment"
+      "function": "deleteWishlist"
     }
   ]
 }

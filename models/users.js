@@ -39,7 +39,7 @@ exports.updateUser = function (userId, userData, routerCallback) {
     });
 }
 
-exports.deleteUsers = function (id, routerCallback) {
+exports.deleteById = function (id, routerCallback) {
     console.log("#########MODELS#########");///
     console.log("id = " + id);///
     if(id){
@@ -54,22 +54,6 @@ exports.deleteUsers = function (id, routerCallback) {
             return routerCallback(null, dbResult);
         });
     }
-}
-
-
-exports.findByEmail = function (email, callback) {
-    var email = email;
-    Users.findOne({
-        email: email
-    }, function (err, user) {
-        if(err) return callback(err);
-        else if(!user) {
-            var error = new Error ('No such user.');
-            error.statusCode = 404;
-            return callback(error, user);
-        }
-        return callback(null, user);
-    });
 }
 
 exports.findByUsername = function (username, callback) {
@@ -128,21 +112,18 @@ exports.getUsers = function (query, callback){
         var subCollection=collections.one;
         var collectionSize=collections.two;
         subCollection.forEach(function(item,index){
+            var item=item;
             data[index]=item;
             data[index].link={
                 rel:"self",
-                href:"/v1/users"+item.id
+                href:"/v1/users/"+item.id
             };
         })
         var res={};
         res.data=data;
-        res.link=construct('/v1/users/',
-            offset,
-            limit,
-            queryObject,
-            query.field,
-            collectionSize);
-        //console.log(res);
+        if(limit!=0){
+        res.link=construct('/v1/users/', offset, limit, queryObject, query.field, collectionSize);
+        }
         return callback(null,res);
     })
     function subcollection(callback){

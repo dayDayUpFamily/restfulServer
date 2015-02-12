@@ -2,10 +2,10 @@
 
 
 var Wishlists = require('../../models/wishlist');
+var Apartments = require('../../models/apartments');
 
 
-
-exports.getApartments=function(req,res,next){
+exports.getWishlists=function(req,res,next){
     var userId = req.params.userId;
     var query=req.query;
     //console.log(userId);
@@ -16,35 +16,49 @@ exports.getApartments=function(req,res,next){
      })
 }
 
-exports.getApartment=function(req,res,next){
+exports.getWishlistApt=function(req,res,next){
     var userId=req.params.userId;
     var aptId=req.params.id;
+    Apartments.findById(aptId, req.query, function(err, result) {
+        if (err) return next(err);
+        result.status=200;
+        res.status(200).send(result);
+    })
 
 }
 
-exports.addApartment=function(req,res,next){
-    Wishlists.addWishApt(req.body, function(err, result){
+exports.addWishlist=function(req,res,next) {
+    var userId = req.params.userId;
+    var data = req.body;
+    data.userId = userId;
+    Wishlists.addByAptId(data, function (err, result) {
         if (err) return next(err);
-        res.status(200).send(result);
+        res.location(req.headers.host + "/v1/users/" + userId + "/wishlist/apartments/" + data.aptId);
+        res.status(201);
+
+        return res.json({status: 201});
     });
 }
-
-exports.changeApartment = function ( req, res, next ) {
+exports.updateWishlist = function ( req, res, next ) {
     var id = req.params.id;
     var body = req.body;
-    Wishlists.changeApartment(id,body, function(err, result) {
+    console.log(id);
+    Wishlists.updateByAptId(id,body, function(err, result) {
         if (err) return next(err);
-        res.status(200).send(result);
+        res.status(200);
+        return res.json({status:200});
     })
 }
 
-exports.deleteApartment = function ( req, res, next ) {
+exports.deleteWishlist = function ( req, res, next ) {
     var aptId = req.params.id;
     var userId = req.params.userId;
-    Wishlists.deleteApartment(aptId, userId, function(err, result) {
+    Wishlists.deleteByAptId(aptId, userId, function(err, result) {
         if (err) return next(err);
-        res.status(200).send(result);
+        res.status(200);
+        return res.json({status:200});
     })
 }
+
 
 

@@ -44,13 +44,15 @@ exports.findByUserId= function (id,query, callback) {
         var res={};
         res.data=data;
         delete queryObject.userId;
+        if(limit!=0){
         res.link=construct('/v1/users/'+userId+'/wishlist/apartments',
             offset,
             limit,
             queryObject,
             query.field,
             collectionSize);
-        console.log(res);
+        }
+
         return callback(null,res);
     })
     function subcollection(callback){
@@ -62,14 +64,14 @@ exports.findByUserId= function (id,query, callback) {
 
 }
 
-exports.addWishApt=function(data,callback){
+exports.addByAptId=function(data,callback){
     Wishlists.create(data,function(err,result){
         if(err)return callback(err);
         return callback(null,result);
     })
 }
 
-exports.changeApartment = function(id,data,callback){
+exports.updateByAptId = function(id,data,callback){
     var apartmentId = id;
     var data = data;
     console.log(id);
@@ -86,7 +88,7 @@ exports.changeApartment = function(id,data,callback){
 
 // test case: 
 // DELETE localhost:1123/v1/users/nBz7O1JKA/wishlist/apartments/1
-exports.deleteApartment = function (aptId, userId, callback) {
+exports.deleteByAptId = function (aptId, userId, callback) {
     var aptId = aptId;
     var userId = userId;
     Wishlists.remove({
